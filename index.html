@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bonservis Admin</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section id="login-view" class="auth-card">
+        <div>
+          <p class="eyebrow">Bonservis</p>
+          <h1>Haber Paneli</h1>
+        </div>
+        <form id="login-form" class="stack">
+          <label>
+            E-posta
+            <input id="email" type="email" autocomplete="email" required>
+          </label>
+          <label>
+            Sifre
+            <input
+              id="password"
+              type="password"
+              autocomplete="current-password"
+              required
+            >
+          </label>
+          <button type="submit">Giris yap</button>
+          <p id="login-error" class="error" role="alert"></p>
+        </form>
+      </section>
+
+      <section id="panel-view" class="panel hidden">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Bonservis</p>
+            <h1>Haberleri Yonet</h1>
+          </div>
+          <button id="sign-out" class="secondary" type="button">Cikis</button>
+        </header>
+
+        <div class="toolbar">
+          <input
+            id="search"
+            type="search"
+            placeholder="Baslik, oyuncu veya kaynak ara"
+            autocomplete="off"
+          >
+          <button id="refresh" class="secondary" type="button">Yenile</button>
+        </div>
+
+        <div class="status-row">
+          <span id="status">Yukleniyor...</span>
+          <span id="count"></span>
+        </div>
+
+        <div id="config-warning" class="notice hidden"></div>
+        <div id="news-list" class="news-list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
